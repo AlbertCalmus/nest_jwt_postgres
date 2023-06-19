@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  localdb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: localdb_i
+    restart: always 
+    environment:
+      POSTGRES_PASSWORD: password
+    container_name: localdb_c
+    ports:
+      - '5432:5432'
